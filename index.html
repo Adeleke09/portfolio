@@ -48,23 +48,86 @@
 
         /* Hero Section */
         header {
-            height: 60vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0 8%;
+            padding: 80px 8%;
             border-bottom: 1px solid var(--border);
+        }
+
+        /* Nigerian Clock Styling */
+        .wat-clock {
+            margin-bottom: 20px;
+            background: rgba(255, 180, 0, 0.1);
+            padding: 8px 15px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255, 180, 0, 0.2);
+            width: fit-content;
+        }
+
+        #clock-time {
+            color: var(--accent);
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .wat-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted);
         }
 
         header h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 10px; }
         .accent { color: var(--accent); }
         header p { color: var(--muted); font-size: 1.1rem; max-width: 600px; }
 
-        /* Section Universal Styling */
+        /* Brand Design Section */
+        .brand-section {
+            padding: 80px 8%;
+            background: #050505;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .brand-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        .brand-img-main {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .brand-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+        }
+
+        .brand-item h4 { color: var(--accent); margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; }
+
+        /* Projects Gallery */
         section { padding: 80px 8%; border-bottom: 1px solid var(--border); }
         h2 { font-size: 2rem; margin-bottom: 40px; text-align: center; }
 
-        /* Projects Gallery */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -93,7 +156,6 @@
             color: #444;
             font-weight: bold;
             font-size: 1.2rem;
-            /* To add real images, use: background-image: url('your-image.jpg'); */
             background-size: cover;
             background-position: center;
         }
@@ -137,6 +199,7 @@
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 10px; }
             header { text-align: center; align-items: center; }
+            .brand-container { padding: 20px; }
         }
     </style>
 </head>
@@ -146,38 +209,71 @@
         <div class="logo">ODUKOYA ADELEKE E.</div>
         <div class="nav-links">
             <a href="#projects">Work</a>
+            <a href="#brand">Brand</a>
             <a href="#socials">Socials</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header>
+        <div class="wat-clock">
+            <span class="wat-label">Lagos, NG</span>
+            <div id="clock-time">00:00:00</div>
+        </div>
+
         <h1>Hi, I'm <span class="accent">Adeleke Ebenezer</span>.</h1>
-        <p>I am Odukoya Adeleke Ebenezer, a multidisciplinary digital creator based in Lagos. I specialize in turning complex ideas into clean, functional, and visually striking digital experiences. With a keen eye for detail and a passion for modern aesthetics, I help brands and individuals establish a powerful presence across the web and social media. My goal is simple: to build solutions that don't just work, but inspire. I build modern digital solutions and craft creative brand identities. Let's make something amazing together.</p>
+        <p>I am Odukoya Adeleke Ebenezer, a multidisciplinary digital creator based in Lagos. I specialize in turning complex ideas into clean, functional, and visually striking digital experiences.</p>
     </header>
 
+    <section id="brand" class="brand-section">
+        <h2>Brand Identity</h2>
+        <div class="brand-container">
+            <img src="121210.png" alt="Adeleke Brand Design" class="brand-img-main">
+            
+            <div class="brand-info-grid">
+                <div class="brand-item">
+                    <h4>Color Palette</h4>
+                    <p>#0A0A0A (Rich Black)</p>
+                    <p>#FFCC00 (Digital Gold)</p>
+                </div>
+                <div class="brand-item">
+                    <h4>Typography</h4>
+                    <p>Inter Bold</p>
+                    <p>JetBrains Mono</p>
+                </div>
+                <div class="brand-item">
+                    <h4>Visual Style</h4>
+                    <p>Minimalist Tech</p>
+                    <p>Wireframe Accents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
-        <h2>My Projects</h2>
+        <h2>Selected Work</h2>
         <div class="project-grid">
             <div class="project-card">
-                <div class="project-img">Project 01</div>
+                <div class="project-img" style="background-image: url('121211.png');"></div>
                 <div class="project-info">
                     <h3>Web Application</h3>
-                    <p>A fully responsive business platform built for scalability and user engagement.</p>
+                    <p>Adeleke Analytics Pro: A high-performance dashboard for real-time data tracking and business intelligence.</p>
                 </div>
             </div>
+
             <div class="project-card">
-                <div class="project-img">Project 02</div>
+                <div class="project-img" style="background-image: url('121210.png');"></div>
                 <div class="project-info">
                     <h3>Brand Design</h3>
-                    <p>Complete visual identity including logo design and social media assets.</p>
+                    <p>Complete visual identity including logo design and professional brand assets for a cohesive digital presence.</p>
                 </div>
             </div>
+
             <div class="project-card">
-                <div class="project-img">Project 03</div>
+                <div class="project-img" style="background-image: url('ui-concept.png');"></div>
                 <div class="project-info">
                     <h3>UI/UX Concept</h3>
-                    <p>A clean, user-centered design for a mobile banking experience.</p>
+                    <p>A clean, user-centered design for a mobile banking experience focusing on intuitive navigation.</p>
                 </div>
             </div>
         </div>
@@ -203,7 +299,7 @@
                 <p>odukoya_adeleke</p>
             </a>
             <a href="https://X.com/@adeleke37664" class="social-card" target="_blank">
-                <i class="fab fa-X"></i>
+                <i class="fab fa-twitter"></i>
                 <p>@adeleke37664</p>
             </a>
         </div>
@@ -219,9 +315,23 @@
         </p>
     </footer>
 
+    <script>
+        function updateWAT() {
+            const now = new Date();
+            const options = {
+                timeZone: 'Africa/Lagos',
+                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                hour12: false
+            };
+            const formatter = new Intl.DateTimeFormat('en-GB', options);
+            document.getElementById('clock-time').textContent = formatter.format(now);
+        }
+        setInterval(updateWAT, 1000);
+        updateWAT();
+    </script>
 </body>
-
 </html>  
+
 
 
 
